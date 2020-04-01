@@ -1,0 +1,12 @@
+version: '3'
+services: 
+    nginx:
+        image: nginx:latest-nginx
+        ports: 
+            - 8080:8080
+    haproxy:
+        image: nginx:latest-haproxy
+        ports:
+            - 80:80
+        depends_on: 
+            - nginx 
